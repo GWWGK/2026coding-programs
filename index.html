@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 초등 로봇 코딩 교실 수강생 모집</title>
+    <style>
+        /* 기본 스타일 리셋 및 폰트 지정 */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', 'Noto Sans KR', sans-serif; }
+        body { background-color: #f4f7fe; color: #333; line-height: 1.6; }
+
+        /* 히어로 세션 (상단 바너) */
+        header {
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 12px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* 메인 컨테이너 */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: #2c3e50; }
+
+        /* 프로그램 그리드 (카드 레이아웃) */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* 개별 프로그램 카드 */
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-badge {
+            align-self: flex-start;
+            background: #eef2ff;
+            color: #4f46e5;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+        .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #1e293b; }
+        .card p { font-size: 0.95rem; color: #64748b; margin-bottom: 15px; }
+
+        /* 상세 정보 세부항목 */
+        .info-list { list-style: none; margin-bottom: 20px; font-size: 0.9rem; border-top: 1px solid #f1f5f9; padding-top: 15px; }
+        .info-list li { margin-bottom: 8px; display: flex; justify-content: space-between; }
+        .info-list li strong { color: #334155; }
+
+        /* 인원 현황 태그 */
+        .capacity-info {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+        .capacity-info span { color: #2563eb; }
+
+        /* 신청하기 버튼 스타일 */
+        .apply-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 0;
+            text-align: center;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .apply-btn:hover { background-color: #1d4ed8; }
+
+        /* 마감된 상태 스타일 */
+        .apply-btn.closed {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+            pointer-events: none; /* 클릭 불가 처리 */
+        }
+
+        footer { text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 헤더 -->
+    <header>
+        <h1>🤖 2026 미래 로봇 코딩 캠프</h1>
+        <p>상상력을 현실로! 직접 만들고 조종하는 초등 로봇 코딩 교실</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">모집 프로그램 안내</h2>
+
+        <div class="program-grid">
+
+            <!-- 프로그램 1 (모집 중) -->
+            <div class="card">
+                <div>
+                    <span class="card-badge">초등 1~3학년</span>
+                    <h3>[기초] 레고로 시작하는 로봇 코딩</h3>
+                    <p>블록 코딩 기초를 배우고 동작하는 완구 로봇을 조립합니다.</p>
+                    <ul class="info-list">
+                        <li><strong>일시:</strong> 매주 토요일 10:00 - 12:00</li>
+                        <li><strong>수강료:</strong> 무료</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="capacity-info">
+                        모집 정원: <span>12명</span> (선착순)
+                    </div>
+                    <!-- 구글폼 URL 입력 -->
+                    <a href="https://forms.google.com/YOUR_GOOGLE_FORM_1" target="_blank" class="apply-btn">신청하기</a>
+                </div>
+            </div>
+
+            <!-- 프로그램 2 (모집 중) -->
+            <div class="card">
+                <div>
+                    <span class="card-badge">초등 4~6학년</span>
+                    <h3>[심화] 자율주행 스마트 로봇 만들기</h3>
+                    <p>센서 제어 알고리즘을 배우고 장애물을 회피하는 자율주행 차를 제작합니다.</p>
+                    <ul class="info-list">
+                        <li><strong>일시:</strong> 매주 토요일 14:00 - 16:00</li>
+                        <li><strong>수강료:</strong> 무료</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="capacity-info">
+                        모집 정원: <span>10명</span> (선착순)
+                    </div>
+                    <!-- 구글폼 URL 입력 -->
+                    <a href="https://forms.google.com/YOUR_GOOGLE_FORM_2" target="_blank" class="apply-btn">신청하기</a>
+                </div>
+            </div>
+
+            <!-- 프로그램 3 (마감 예시) -->
+            <div class="card">
+                <div>
+                    <span class="card-badge">초등 전학년</span>
+                    <h3>[특강] AI 로봇 축구 경진대회</h3>
+                    <p>직접 코딩한 로봇으로 팀을 이루어 드론 및 축구 경기를 진행합니다.</p>
+                    <ul class="info-list">
+                        <li><strong>일시:</strong> 일요일 13:00 - 17:00</li>
+                        <li><strong>수강료:</strong> 무료</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="capacity-info" style="color: #64748b;">
+                        모집 정원: <span>15명</span> (정원 채움)
+                    </div>
+                    <!-- 마감 시 href를 제거하고 closed 클래스를 부여 -->
+                    <a class="apply-btn closed">마감</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 로봇코딩교육센터. All rights reserved.</p>
+    </footer>
+
+</body>
