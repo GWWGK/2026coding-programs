@@ -92,6 +92,22 @@
   }
   .pcard.advanced .apply-btn{ border-color:var(--amber); color:var(--amber); }
 
+  /* ── 마감 표시: 카드의 class="pcard" 를 class="pcard closed" 로 바꾸면 적용 ── */
+  .pcard{ position:relative; }
+  .closed-btn, .closed-badge{ display:none; }
+  .pcard.closed .apply-btn{ display:none; }
+  .pcard.closed .closed-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:#EEF0F4; border:1.5px solid #D5D9E2; color:#4A5163; border-radius:10px;
+    padding:11px 16px; font-weight:700; font-size:13.5px;
+  }
+  .pcard.closed .closed-badge{
+    display:inline-block; position:absolute; top:18px; right:18px;
+    background:#E5484D; color:#fff; font-size:12px; font-weight:800; padding:4px 10px; border-radius:999px;
+  }
+  .pcard.closed > *:not(.apply-row):not(.closed-badge){ opacity:.55; }
+  .pcard.closed h4{ padding-right:48px; }
+
   .waitlist-card{
     background:#fff; border:1.5px dashed var(--ink-soft); border-radius:16px;
     padding:26px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;
@@ -121,15 +137,15 @@
 </head>
 <body>
 
-<div class="announce-bar">📅 모집기간 2026.10.28(수) 9:00 ~ 11.03(화) 18:00 · 선착순 마감</div>
+<div class="announce-bar">🔔 모집 마감 안내 · 전 과정 신청 및 대기자 접수가 모두 마감되었습니다</div>
 
 <header class="nav">
   <div class="nav-inner">
     <div class="brand">조선대학교 <span>지능형로봇혁신융합대학사업단</span> </div>
     <nav class="menu">
       <a href="#programs">프로그램</a>
-      <a href="#waitlist">대기자 신청</a>
-      <a href="#notice">신청방법</a>
+      <a href="#waitlist">마감 안내</a>
+      <a href="#notice">안내사항</a>
       <a href="#apply">문의</a>
     </nav>
   </div>
@@ -140,9 +156,9 @@
   <div class="hero-blob b2"></div>
   <div class="wrap">
     <h1>2026 초등학생 대상 <span class="hl">AI 로봇 코딩</span> 체험 교육</h1>
-    <p class="lead"> 지능형로봇혁신융합대학 사업단이 준비한 하루 동안의 로봇·AI 코딩 체험, 지금 신청해주세요.</p>
+    <p class="lead">신청 및 대기자 접수가 모두 마감되었습니다.<br>많은 관심 가져주셔서 감사합니다.</p>
     <div class="hero-actions">
-      <a href="#programs" class="pill pill-primary">프로그램 신청하기</a>
+      <a href="#programs" class="pill pill-outline">프로그램 안내 보기</a>
     </div>
   </div>
 </section>
@@ -150,7 +166,7 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-sm">신청 전에 확인하세요</span>
+      <span class="eyebrow-sm">교육 개요</span>
       <h2>한눈에 보기</h2>
     </div>
     <div class="facts">
@@ -167,14 +183,20 @@
 <section id="programs">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow-sm">프로그램별로 따로 신청해요</span>
-      <h2>참여할 프로그램을 골라주세요</h2>
-      <p>4개 프로그램은 각각 별도로 신청을 받습니다. 자녀가 참여할 프로그램의 버튼으로 신청해주세요.</p>
+      <span class="eyebrow-sm">모집 마감</span>
+      <h2>프로그램 안내</h2>
+      <p>4개 프로그램 모두 선착순 정원이 마감되었습니다.</p>
     </div>
 
+    <!--
+      [마감 처리 방법]
+      정원이 찬 프로그램 카드의  <div class="pcard closed">  를  <div class="pcard closed">  로 바꾸면 끝.
+      (중급 카드는 <div class="pcard advanced closed">)  /  다시 열려면 closed 만 지우면 됩니다.
+    -->
     <div class="program-grid">
 
-      <div class="pcard">
+      <div class="pcard closed">
+        <span class="closed-badge">마감</span>
         <h4>IoT 센서보드</h4>
         <div class="chips">
           <span class="chip level">초급 · 1~3학년</span><span class="chip room">8203호</span><span class="chip">정원 20명</span><span class="chip">10:00~11:50</span>
@@ -185,11 +207,13 @@
           <li><span class="step-badge num">2</span><div><span class="time">11:00~11:50</span><b>IoT센서 블럭 실습</b><span class="desc">다양한 센서 구현, 실생활에 적용된 IoT 센서 제어 사례 구현</span></div></li>
         </ul>
         <div class="apply-row">
-          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfK5WsVlsdSZH2Ys2_O9yWv8aGLRtIlyAGu4MbuOsYLnNyaZQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">신청마감</a>
+          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfK5WsVlsdSZH2Ys2_O9yWv8aGLRtIlyAGu4MbuOsYLnNyaZQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">신청하기 →</a>
+          <span class="closed-btn">신청 마감</span>
         </div>
       </div>
 
-      <div class="pcard">
+      <div class="pcard closed">
+        <span class="closed-badge">마감</span>
         <h4>알버트 AI</h4>
         <div class="chips">
           <span class="chip level">초급 · 1~3학년</span><span class="chip room">8206호</span><span class="chip">정원 20명</span><span class="chip">10:00~11:50</span>
@@ -200,11 +224,13 @@
           <li><span class="step-badge num">2</span><div><span class="time">11:00~11:50</span><b>알버트 AI 제어 모드Ⅱ</b><span class="desc">AI 음성인식 모드 제어, 알버트 앱 제어, 알버트 스택 코딩(블록 코딩)</span></div></li>
         </ul>
         <div class="apply-row">
-          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfgp0Ol8cNu0v_BN_VeuaX9fucXDPmgXgt41wcBs9OGB_h75A/viewform?usp=header" target="_blank" rel="noopener noreferrer">신청마감</a>
+          <a class="apply-btn" href="#" target="_blank" rel="noopener noreferrer">신청하기 →</a>
+          <span class="closed-btn">신청 마감</span>
         </div>
       </div>
 
-      <div class="pcard advanced">
+      <div class="pcard advanced closed">
+        <span class="closed-badge">마감</span>
         <h4>인공지능로봇(로보마스터 S1)</h4>
         <div class="chips">
           <span class="chip level">중급 · 4~6학년</span><span class="chip room">8203호</span><span class="chip">정원 20명</span><span class="chip">13:00~14:50</span>
@@ -215,11 +241,13 @@
           <li><span class="step-badge num">2</span><div><span class="time">14:00~14:50</span><b>스크래치 코딩 제어</b><span class="desc">순차·반복·조건 구조 학습을 통한 로봇 제어</span></div></li>
         </ul>
         <div class="apply-row">
-          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd16NqjmM9HTDxNvSEjeMu0v6YjOn8r7zKOoRfb2R2a8GiG0g/viewform?usp=header" target="_blank" rel="noopener noreferrer">신청마감</a>
+          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd16NqjmM9HTDxNvSEjeMu0v6YjOn8r7zKOoRfb2R2a8GiG0g/viewform?usp=header" target="_blank" rel="noopener noreferrer">신청하기 →</a>
+          <span class="closed-btn">신청 마감</span>
         </div>
       </div>
 
-      <div class="pcard advanced">
+      <div class="pcard advanced closed">
+        <span class="closed-badge">마감</span>
         <h4>코딩으로 즐기는 드론</h4>
         <div class="chips">
           <span class="chip level">중급 · 4~6학년</span><span class="chip room">8206호</span><span class="chip">정원 20명</span><span class="chip">13:00~14:50</span>
@@ -230,7 +258,8 @@
           <li><span class="step-badge num">2</span><div><span class="time">14:00~14:50</span><b>코딩을 통한 고급 드론 조작</b><span class="desc">코딩 블록의 고급 기능 구현, 장애물을 이용한 드론 조작</span></div></li>
         </ul>
         <div class="apply-row">
-          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfbf0B8gyWeLztu_ushbmqykYX5dgOmsWnAeqeFmUr_GqCQSg/viewform?usp=header" target="_blank" rel="noopener noreferrer">신청마감</a>
+          <a class="apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfbf0B8gyWeLztu_ushbmqykYX5dgOmsWnAeqeFmUr_GqCQSg/viewform?usp=header" target="_blank" rel="noopener noreferrer">신청하기 →</a>
+          <span class="closed-btn">신청 마감</span>
         </div>
       </div>
 
@@ -238,10 +267,9 @@
 
     <div class="waitlist-card" id="waitlist">
       <div>
-        <h3>⏳ 정원이 마감되었나요?</h3>
-        <p>모든 과정이 선착순 마감된 이후에는, 아래 통합 대기자 폼에서 희망 프로그램을 선택해 대기자로 신청하실 수 있습니다. 결원이 생기면 순서대로 안내드립니다.</p>
+        <h3>🙏 대기자 접수도 마감되었습니다</h3>
+        <p>대기자 접수 인원까지 모두 채워져 더 이상 신청을 받지 않습니다. 많은 관심에 감사드립니다. 문의: 062-608-5579</p>
       </div>
-      <a class="waitlist-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfc1jolLvuE9CDO_2u-KERCPrSz3na8OFxByZ62rOlEa2sIOA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">대기자 신청하기 →</a>
     </div>
   </div>
 </section>
@@ -250,18 +278,15 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow-sm">마지막으로</span>
-      <h2>신청 전 꼭 확인하세요</h2>
+      <h2>신청하신 분들은 꼭 확인하세요</h2>
     </div>
     <div class="notice-card">
       <ul style="list-style:none; margin:0; padding:0;">
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>프로그램마다 신청 폼이 다릅니다. 자녀가 참여할 과정의 버튼으로 정확히 신청해주세요.</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>교육이 원활히 진행될 수 있도록 교육 시간을 지켜주세요.</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>학생 수준을 고려해 프로그램 난이도(초급·중급)를 선택하여 신청해주세요.</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>본 교육에 사용되는 교구는 교육 종료 후 개인에게 별도로 지급하지 않습니다.</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>안전수칙을 준수하고 캠퍼스 내에서 안전사고가 발생하지 않도록 학부모님의 지도를 부탁드립니다.</li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>행사 중 촬영된 사진은 보도자료, 홈페이지 게시 등 홍보 자료로 활용될 수 있습니다.</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>불가피하게 참석이 어려울 경우 사업단으로 연락하시어 취소해 주시기 바랍니다.</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>정원 마감 후에는 통합 대기자 폼으로 신청해주시면, 결원 발생 시 순서대로 연락드립니다.</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5FF0" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg>불가피하게 참석이 어려울 경우 사업단으로 연락하시어 취소해 주시기 바랍니다. 결원은 대기자 순서대로 안내됩니다.</li>
 
       </ul>
     </div>
